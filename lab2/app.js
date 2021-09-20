@@ -8,6 +8,14 @@ app.use("/static", express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+//getting the metrics
+app.get("metrics.json", (req, res) => {
+  metrics.get((err, data) => {
+    if (err) throw err;
+    res.status(200).json(data);
+  });
+});
+
 app.get("/", function (req, res) {
   res.render("home");
 });

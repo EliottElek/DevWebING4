@@ -4,22 +4,22 @@
     <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
-      <div class="content">
-    <div class="navbar">
-      <div class="logo">
-        <a href="/">
-          <img src="/static/logo.png" alt="logo" /></a>
+    <div class="content">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/">
+            <img src="/static/logo.png" alt="logo" /></a>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="links">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="spacerbar"></div>
-    {{{body}}}
+      <div class="spacerbar"></div>
+      {{{body}}}
     </div>
     <div class="footer">
       <div class="rights">
@@ -34,4 +34,20 @@
       </div>
     </div>
   </body>
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+  ></script>
+  <script>
+ $('#show-metrics').click((e) => {
+  e.preventDefault();
+  $.getJSON("lab2/metrics.json", (data) => {
+    const content = data.map(d => {
+      return '<p>timestamp: '+d.timestamp+', value: '+d.value+'</p>';
+    })
+    $('#metrics').append(content.join("\n"));
+  }).fail(function() {
+    console.log( "error" );
+  });
+})
+  </script>
 </html>

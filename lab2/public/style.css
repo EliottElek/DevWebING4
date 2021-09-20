@@ -7,14 +7,38 @@
 .content {
   min-height: 101vh;
 }
-h1 {
+.page-content {
   padding: 23px;
+}
+h1 {
   font-size: 37px;
 }
 h2 {
   padding: 23px;
 }
 p {
+  padding: 23px;
+  font-size: 21px;
+}
+button {
+  margin-left: 23px;
+  min-height: 45px;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: solid 1px rgb(136, 62, 206, 0.4);
+  background-color: rgb(136, 62, 206, 0.4);
+  color: white;
+  font-size: 23px;
+  transition: 0.1s ease-in;
+}
+button:hover {
+  border: solid 1px rgb(136, 62, 206, 0.4);
+  background-color: rgba(136, 62, 206, 0.1);
+  color: rgb(136, 62, 206, 0.4);
+  transition: 0.1s ease-out;
+}
+.home-nav {
   padding: 23px;
   font-size: 21px;
 }
@@ -51,15 +75,15 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 5cd00;
   color: black;
   transition: 0.2s ease-in;
-  padding:5px;
+  padding: 5px;
   border-radius: 8px;
 }
 .links ul li a:hover {
   transition: 0.2s ease-out;
-  background-color: rgb(36, 36, 36, 0.1);
+  background-color: rgba(136, 62, 206, 0.1);
 }
 .footer {
   color: white;
@@ -97,10 +121,18 @@ p {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .links ul li {
+    list-style: none;
+    padding: 10px;
+  }
 }
 @media screen and (max-width: 524px) {
   .links-footer ul li a {
     padding-left: 5px;
     padding-right: 5px;
+  }
+  .links ul li {
+    list-style: none;
+    padding: 5px;
   }
 }
