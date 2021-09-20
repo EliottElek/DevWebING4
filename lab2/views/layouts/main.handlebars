@@ -40,13 +40,13 @@
   <script>
  $('#show-metrics').click((e) => {
   e.preventDefault();
-  $.getJSON("lab2/metrics.json", (data) => {
+  $.getJSON("/metrics.json", (data) => {
     const content = data.map(d => {
       return '<p>timestamp: '+d.timestamp+', value: '+d.value+'</p>';
     })
     $('#metrics').append(content.join("\n"));
-  }).fail(function() {
-    console.log( "error" );
+  }).fail(function(error) {
+    console.log(error);
   });
 })
   </script>
