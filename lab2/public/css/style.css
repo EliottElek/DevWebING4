@@ -3,6 +3,10 @@
   margin: 0;
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
+    --color-primary: rgba(34, 34, 34, 0.712);
+    --color-secondary: rgb(136, 62, 206, 0.4);
+
+
 }
 .content {
   min-height: 101vh;
@@ -13,15 +17,16 @@
 h1 {
   font-size: 37px;
 }
-h2,h3 {
+h2,
+h3 {
   padding: 23px;
 }
 p {
   padding: 23px;
   font-size: 17px;
 }
-#message{
-  color:red;
+#message {
+  color: red;
 }
 button {
   margin-left: 23px;
@@ -29,14 +34,14 @@ button {
   padding: 4px;
   cursor: pointer;
   border-radius: 8px;
-  border: solid 1px rgb(136, 62, 206, 0.4);
-  background-color: rgb(136, 62, 206, 0.4);
+  border: solid 1px var(--color-secondary);
+  background-color: var(--color-secondary);
   color: white;
   font-size: 17px;
   transition: 0.1s ease-in;
 }
 button:hover {
-  border: solid 1px rgb(136, 62, 206, 0.4);
+  border: solid 1px var(--color-secondary);
   background-color: rgba(136, 62, 206, 0.1);
   color: rgb(136, 62, 206, 0.4);
   transition: 0.1s ease-out;
@@ -119,48 +124,58 @@ button:hover {
   color: white;
   transition: 0.2s ease-in;
 }
-.home-nav li a{
-    font-size: 17px;
+.home-nav li a {
+  font-size: 17px;
 }
-#contact-form{
-  display:flex;
+#contact-form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   width: 50%;
 }
-#contact-form input,#contact-form  textarea,#contact-form  label{
-  display:flex;
+#contact-form input,
+#contact-form textarea,
+#contact-form label {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   width: 80%;
-  margin:auto;
+  margin: auto;
   height: 50px;
   margin-bottom: 0;
   margin-top: 0;
 }
-#contact-form input,#contact-form textarea {
-  border:none;
-  border-bottom: solid 2px rgb(136, 62, 206, 0.4);
-  outline:none;
+#contact-form input,
+#contact-form textarea {
+  border: none;
+  border-bottom: solid 2px var(--color-secondary);
+  outline: none;
 }
-#submit{
-  margin:12px;
-  margin-left:10%;
+#submit {
+  margin: 12px;
+  margin-left: 10%;
   padding-left: 15px;
   padding-right: 15px;
 }
-.welcome{
+.welcome {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#welcomeimg{
+#welcomeimg {
   width: 50%;
-  height:auto;
+  height: auto;
+}
+.attribut {
+  color: rgb(136, 62, 206, 0.8);
+  font-weight: 700;
+}
+#welcometitle{
+  margin-top:27px;
 }
 @media screen and (max-width: 1024px) {
   .links-footer ul li a {

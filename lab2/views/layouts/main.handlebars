@@ -28,9 +28,9 @@
       </div>
       <div class="links-footer">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a id = "home" href="/">Home</a></li>
+          <li><a id = "about" href="/about">About us</a></li>
+          <li><a id = "contact" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -49,8 +49,8 @@
   <script>
     $('#show-metrics').click((e) => { e.preventDefault();
     $.getJSON("/metrics.json", (data) => { const content = data.map(d => {
-    return '<p>name: '+d.name+', lastname: '+d.lastname+'</p>'; })
-    $('#metrics').append(content.join("\\\\\\\n")); }).fail(function(error) {
+    return '<p><span class = "attribut">name:</span> '+d.name+', <span class = "attribut">lastname:</span> '+d.lastname + "</p>"; })
+    $('#metrics').html(content.join("\n")); }).fail(function(error) {
     console.log(error); }); })
   </script>
 </html>
