@@ -6,4 +6,4 @@ To launch the app, make sure you are in the folder containing ```app.js```.
 
 In the command prompt, enter the following command :
 ```js
-   node app.js
+   npm start
