@@ -16,7 +16,7 @@ module.exports = {
       "       <p>path : " +
       path +
       " </p>" +
-      "<a href=/hello?name=toto'" +
+      "<a href='/hello?name=toto'" +
       ">vers toto</a><br>" +
       "<a href='/hello?name=ulysse'" +
       ">vers ulysse</a><br>" +
@@ -27,7 +27,14 @@ module.exports = {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(content);
     if (path === "/hello" && "name" in queryParams) {
-      res.write("Hello " + queryParams["name"]);
+      res.write("Michael says : Hello " + queryParams["name"]+"<br>");
+      if (queryParams["name"]==="ulysse"){
+        res.write("Ulysse says : My name is Ulysse. I'm a software engineer student, and I love badminton.<br>")
+      }else if (queryParams["name"]==="hugo"){
+        res.write("Hugo says : My name is Hugo. I'm a software engineer student, just like Ulysse, and I love my dog.<br>")
+      }else if (queryParams["name"]==="toto"){
+        res.write("Toto says : My name is Toto. I'm not a software engineer student like Hugo or Ulysse, but I love Hugo's dog.<br>")
+      }
     } else {
       res.write("404 error.. Seems like you're lost.");
     }
