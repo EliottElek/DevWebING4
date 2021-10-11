@@ -60,17 +60,17 @@ app.get("/channels/:id/messages", async (req, res) => {
 });
 
 app.post("/channels/:id/messages", async (req, res) => {
-  const message = await dbChannels.channels[req.body].messages.create(req.body);
+  const message = await dbChannels.channels[req.params.id].messages.create(req.body);
   res.status(201).json(message);
 });
 
 app.get("/channels/:id/messages", (req, res) => {
-  const message = dbChannels.channels[req.body].messages.get(req.body);
+  const message = dbChannels.channels[req.params.id].messages.get(req.body);
   res.json(message);
 });
 
 app.put("/users/:id", (req, res) => {
-  const message = dbChannels.channels[req.body].messages.update(req.body);
+  const message = dbChannels.channels[req.params.id].messages.update(req.body);
   res.json(message);
 });
 
